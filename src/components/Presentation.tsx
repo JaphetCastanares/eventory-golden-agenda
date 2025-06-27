@@ -16,6 +16,9 @@ import SurveyClientSourceSlide from './slides/SurveyClientSourceSlide';
 import SurveyChallengesSlide from './slides/SurveyChallengesSlide';
 import SurveyToolsSlide from './slides/SurveyToolsSlide';
 import SurveyPlatformSlide from './slides/SurveyPlatformSlide';
+import EventoryFeaturesSlide from './slides/EventoryFeaturesSlide';
+import WhyEventorySlide from './slides/WhyEventorySlide';
+import ThankYouSlide from './slides/ThankYouSlide';
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,7 +37,10 @@ const Presentation = () => {
     { component: SurveyClientSourceSlide, title: "Client Sources" },
     { component: SurveyChallengesSlide, title: "Business Challenges" },
     { component: SurveyToolsSlide, title: "Digital Tools Usage" },
-    { component: SurveyPlatformSlide, title: "Platform Adoption" }
+    { component: SurveyPlatformSlide, title: "Platform Adoption" },
+    { component: EventoryFeaturesSlide, title: "Eventory Features" },
+    { component: WhyEventorySlide, title: "Why Eventory?" },
+    { component: ThankYouSlide, title: "Thank You" }
   ];
 
   const nextSlide = () => {
@@ -54,26 +60,28 @@ const Presentation = () => {
         <CurrentSlideComponent />   
       </div>
 
-      {/* Floating Navigation Buttons */}
-      <Button
-        onClick={prevSlide}
-        disabled={currentSlide === 0}
-        variant="outline"
-        size="lg"
-        className="fixed left-6 top-1/2 transform -translate-y-1/2 border-blue-500 text-blue-600 hover:bg-blue-50 bg-white shadow-lg z-10"
-      >
-        <ChevronLeft className="w-5 h-5" />
-      </Button>
-      
-      <Button
-        onClick={nextSlide}
-        disabled={currentSlide === slides.length - 1}
-        variant="outline"
-        size="lg"
-        className="fixed right-6 top-1/2 transform -translate-y-1/2 border-blue-500 text-blue-600 hover:bg-blue-50 bg-white shadow-lg z-10"
-      >
-        <ChevronRight className="w-5 h-5" />
-      </Button>
+      {/* Bottom Navigation Buttons */}
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4 z-10">
+        <Button
+          onClick={prevSlide}
+          disabled={currentSlide === 0}
+          variant="outline"
+          size="lg"
+          className="bg-white/70 backdrop-blur-sm border-blue-500 text-blue-600 hover:bg-blue-50/80 shadow-lg transition-all duration-200"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </Button>
+        
+        <Button
+          onClick={nextSlide}
+          disabled={currentSlide === slides.length - 1}
+          variant="outline"
+          size="lg"
+          className="bg-white/70 backdrop-blur-sm border-blue-500 text-blue-600 hover:bg-blue-50/80 shadow-lg transition-all duration-200"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </Button>
+      </div>
     </div>
   );
 };
