@@ -46,13 +46,13 @@ const Presentation = () => {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 px-6 py-4 shadow-md">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-700 px-6 py-4 shadow-lg">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <h1 className="text-2xl font-bold text-black">Eventory Presentation</h1>
+          <h1 className="text-3xl font-bold text-white">Eventory Presentation</h1>
           <div className="flex items-center gap-4">
-            <span className="text-black font-medium">
+            <span className="text-white font-medium text-lg">
               {currentSlide + 1} / {slides.length}
             </span>
             <div className="flex gap-2">
@@ -61,7 +61,7 @@ const Presentation = () => {
                 disabled={currentSlide === 0}
                 variant="outline"
                 size="sm"
-                className="border-black text-black hover:bg-black hover:text-white"
+                className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               >
                 <ChevronLeft className="w-4 h-4" />
               </Button>
@@ -70,7 +70,7 @@ const Presentation = () => {
                 disabled={currentSlide === slides.length - 1}
                 variant="outline"
                 size="sm"
-                className="border-black text-black hover:bg-black hover:text-white"
+                className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               >
                 <ChevronRight className="w-4 h-4" />
               </Button>
@@ -85,7 +85,7 @@ const Presentation = () => {
       </div>
 
       {/* Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black px-6 py-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-gray-800 px-6 py-4">
         <div className="max-w-7xl mx-auto flex justify-center">
           <div className="flex gap-2">
             {slides.map((_, index) => (
@@ -93,7 +93,7 @@ const Presentation = () => {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-yellow-400' : 'bg-gray-600'
+                  index === currentSlide ? 'bg-blue-500' : 'bg-gray-500'
                 }`}
               />
             ))}

@@ -5,27 +5,57 @@ const AbstractSlide = () => {
   return (
     <div className="min-h-[80vh] flex flex-col">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold text-black mb-4">ABSTRACT</h1>
-        <div className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto"></div>
+        <h1 className="text-6xl font-bold text-gray-800 mb-4">ABSTRACT</h1>
+        <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
       </div>
       
-      <div className="flex-1 bg-white rounded-lg shadow-lg border-2 border-yellow-400 p-8">
-        <div className="prose prose-lg max-w-none">
-          <p className="text-gray-800 leading-relaxed text-justify">
-            Event planning faces significant challenges in sourcing and coordinating reliable local vendors such as caterers, photographers, and sound system providers. Current research (Lee, S., & Kim, W. G. (2018)) confirms that many organizers rely on Facebook's fragmented marketplace, which lacks dedicated search filters, real-time availability verification, and standardized vendor/supplier/services portfolio profiles. This reliance on manual word-for-word searches often leads to inconsistent results, creating inefficiencies and poor event planning experiences - a finding consistent with recent studies on event management pain points (Xiang, Z., et al. (2015)).
-          </p>
+      <div className="flex-1 bg-white rounded-lg shadow-lg border-2 border-blue-500 p-8">
+        <div className="space-y-8">
+          {/* Problem Statement */}
+          <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-red-800 mb-4">The Problem</h2>
+            <p className="text-lg text-red-700 leading-relaxed">
+              Event organizers struggle with fragmented vendor discovery through Facebook Marketplace, 
+              lacking proper search filters and real-time availability verification.
+            </p>
+          </div>
           
-          <p className="text-gray-800 leading-relaxed text-justify mt-6">
-            To address these gaps, this capstone project introduces <span className="font-bold text-yellow-600">Eventory</span>, a centralized web-based platform designed to streamline vendor discovery and booking. Eventory overcomes the limitations of ad-hoc social media searches by offering smart filtering capabilities based on location, category, pricing, and verified ratings. The platform provides real-time availability tracking, web app inquiries and confirmations, coupled with automated SMS notifications to vendors for new reservations, ensuring prompt responses - addressing the communication gaps identified in event coordination literature.
-          </p>
+          {/* Solution */}
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-blue-800 mb-4">The Solution: Eventory</h2>
+            <p className="text-lg text-blue-700 leading-relaxed">
+              A centralized web platform that streamlines vendor discovery and booking through smart filtering, 
+              real-time availability tracking, and automated SMS notifications.
+            </p>
+          </div>
           
-          <p className="text-gray-800 leading-relaxed text-justify mt-6">
-            A key innovation is the pre-packaged vendor deal system, allowing users to book multiple complementary services with a single action, like successful models in other service industries. Additionally, integrated location mapping visualizes vendor proximity to simplify logistics planning. For vendors, Eventory offers robust multimedia profiles to showcase services through photos, videos, and tiered pricing. Instead of handling payments directly, the platform facilitates manual payment coordination by allowing vendors to display their preferred payment instructions, and organizers can optionally upload proof of payment for vendor confirmation.
-          </p>
+          {/* Key Features */}
+          <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-green-800 mb-4">Key Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="text-lg text-green-700">
+                <strong>• Smart Filtering:</strong> Location, category, pricing, ratings
+              </div>
+              <div className="text-lg text-green-700">
+                <strong>• Pre-packaged Deals:</strong> Book multiple services at once
+              </div>
+              <div className="text-lg text-green-700">
+                <strong>• Location Mapping:</strong> Visualize vendor proximity
+              </div>
+              <div className="text-lg text-green-700">
+                <strong>• Multimedia Profiles:</strong> Photos, videos, pricing tiers
+              </div>
+            </div>
+          </div>
           
-          <p className="text-gray-800 leading-relaxed text-justify mt-6">
-            Eventory enhances operational efficiency for both professional organizers and aspiring event planners, increases business visibility for local vendors, and elevates the overall quality of event planning through systematic coordination and automation.
-          </p>
+          {/* Impact */}
+          <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold text-purple-800 mb-4">Expected Impact</h2>
+            <p className="text-lg text-purple-700 leading-relaxed">
+              Enhanced efficiency for event organizers, increased business visibility for vendors, 
+              and improved overall event planning quality through systematic coordination.
+            </p>
+          </div>
         </div>
       </div>
     </div>
