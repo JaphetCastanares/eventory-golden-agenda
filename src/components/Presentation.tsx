@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import TitleSlide from './slides/TitleSlide';
 import AbstractSlide from './slides/AbstractSlide';
 import IntroductionSlide from './slides/IntroductionSlide';
 import BackgroundSlide from './slides/BackgroundSlide';
@@ -20,6 +21,7 @@ const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
+    { component: TitleSlide, title: "Title" },
     { component: AbstractSlide, title: "Abstract" },
     { component: IntroductionSlide, title: "Chapter 1: Introduction" },
     { component: BackgroundSlide, title: "Background of Study" },
@@ -55,49 +57,51 @@ const Presentation = () => {
             <span className="text-white font-medium text-lg">
               {currentSlide + 1} / {slides.length}
             </span>
-            <div className="flex gap-2">
-              <Button
-                onClick={prevSlide}
-                disabled={currentSlide === 0}
-                variant="outline"
-                size="sm"
-                className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </Button>
-              <Button
-                onClick={nextSlide}
-                disabled={currentSlide === slides.length - 1}
-                variant="outline"
-                size="sm"
-                className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Slide Content */}
-      <div className="max-w-7xl mx-auto p-8">
+      <div className="max-w-7xl mx-auto p-8 pb-24">
         <CurrentSlideComponent />   
       </div>
 
-      {/* Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gray-800 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex justify-center">
+      {/* Bottom Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 px-6 py-4 shadow-lg">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Button
+            onClick={prevSlide}
+            disabled={currentSlide === 0}
+            variant="outline"
+            size="lg"
+            className="border-blue-500 text-blue-600 hover:bg-blue-50"
+          >
+            <ChevronLeft className="w-5 h-5 mr-2" />
+            Previous
+          </Button>
+          
           <div className="flex gap-2">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-blue-500' : 'bg-gray-500'
+                  index === currentSlide ? 'bg-blue-500' : 'bg-gray-300'
                 }`}
               />
             ))}
           </div>
+          
+          <Button
+            onClick={nextSlide}
+            disabled={currentSlide === slides.length - 1}
+            variant="outline"
+            size="lg"
+            className="border-blue-500 text-blue-600 hover:bg-blue-50"
+          >
+            Next
+            <ChevronRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </div>
     </div>
