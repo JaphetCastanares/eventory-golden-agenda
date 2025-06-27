@@ -48,62 +48,32 @@ const Presentation = () => {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-700 px-6 py-4 shadow-lg">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-white">Eventory Presentation</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-white font-medium text-lg">
-              {currentSlide + 1} / {slides.length}
-            </span>
-          </div>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 relative">
       {/* Slide Content */}
-      <div className="max-w-7xl mx-auto p-8 pb-24">
+      <div className="min-h-screen p-8">
         <CurrentSlideComponent />   
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-gray-200 px-6 py-4 shadow-lg">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Button
-            onClick={prevSlide}
-            disabled={currentSlide === 0}
-            variant="outline"
-            size="lg"
-            className="border-blue-500 text-blue-600 hover:bg-blue-50"
-          >
-            <ChevronLeft className="w-5 h-5 mr-2" />
-            Previous
-          </Button>
-          
-          <div className="flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentSlide ? 'bg-blue-500' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
-          
-          <Button
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-            variant="outline"
-            size="lg"
-            className="border-blue-500 text-blue-600 hover:bg-blue-50"
-          >
-            Next
-            <ChevronRight className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
-      </div>
+      {/* Floating Navigation Buttons */}
+      <Button
+        onClick={prevSlide}
+        disabled={currentSlide === 0}
+        variant="outline"
+        size="lg"
+        className="fixed left-6 top-1/2 transform -translate-y-1/2 border-blue-500 text-blue-600 hover:bg-blue-50 bg-white shadow-lg z-10"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </Button>
+      
+      <Button
+        onClick={nextSlide}
+        disabled={currentSlide === slides.length - 1}
+        variant="outline"
+        size="lg"
+        className="fixed right-6 top-1/2 transform -translate-y-1/2 border-blue-500 text-blue-600 hover:bg-blue-50 bg-white shadow-lg z-10"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </Button>
     </div>
   );
 };
