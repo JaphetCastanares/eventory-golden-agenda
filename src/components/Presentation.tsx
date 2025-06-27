@@ -19,6 +19,7 @@ import SurveyPlatformSlide from './slides/SurveyPlatformSlide';
 import EventoryFeaturesSlide from './slides/EventoryFeaturesSlide';
 import WhyEventorySlide from './slides/WhyEventorySlide';
 import ThankYouSlide from './slides/ThankYouSlide';
+import ExpectedOutput from './slides/ExpectedOutput';
 
 const Presentation = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,6 +41,7 @@ const Presentation = () => {
     { component: SurveyPlatformSlide, title: "Platform Adoption" },
     { component: EventoryFeaturesSlide, title: "Eventory Features" },
     { component: WhyEventorySlide, title: "Why Eventory?" },
+    { component: ExpectedOutput, title: "Expected Output" },
     { component: ThankYouSlide, title: "Thank You" }
   ];
 

@@ -15,7 +15,7 @@ const AbstractSlide = () => {
           <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
             <h2 className="text-2xl font-bold text-red-800 mb-4">The Problem</h2>
             <p className="text-lg text-red-700 leading-relaxed">
-              Event organizers struggle with fragmented vendor discovery through Facebook Marketplace, 
+              Event organizers struggle with fragmented vendor discovery through Facebook, 
               lacking proper search filters and real-time availability verification.
             </p>
           </div>
@@ -24,8 +24,7 @@ const AbstractSlide = () => {
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
             <h2 className="text-2xl font-bold text-blue-800 mb-4">The Solution: Eventory</h2>
             <p className="text-lg text-blue-700 leading-relaxed">
-              A centralized web platform that streamlines vendor discovery and booking through smart filtering, 
-              real-time availability tracking, and automated SMS notifications.
+              A centralized web platform that streamlines vendor discovery and booking through innovation.
             </p>
           </div>
           

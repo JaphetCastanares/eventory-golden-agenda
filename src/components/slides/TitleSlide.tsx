@@ -16,21 +16,7 @@ const TitleSlide = () => {
         <div className="bg-white rounded-lg shadow-lg border-2 border-blue-500 p-12 max-w-4xl">
           <div className="space-y-6">
             <div className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg">
-              <h3 className="text-2xl font-bold">Capstone Project Presentation</h3>
-            </div>
-            
-            <div className="text-left space-y-4">
-              <p className="text-xl text-gray-700 leading-relaxed">
-                <strong>Project Overview:</strong> A centralized web-based platform designed to streamline vendor discovery and booking for event organizers.
-              </p>
-              
-              <p className="text-xl text-gray-700 leading-relaxed">
-                <strong>Problem Addressed:</strong> Fragmented vendor sourcing through social media platforms lacking proper search filters and standardized profiles.
-              </p>
-              
-              <p className="text-xl text-gray-700 leading-relaxed">
-                <strong>Solution:</strong> Smart filtering, real-time availability tracking, automated notifications, and integrated location mapping.
-              </p>
+              <h3 className="text-2xl font-bold">Michael Jordan</h3>
             </div>
           </div>
         </div>
